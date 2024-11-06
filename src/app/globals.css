@@ -3,31 +3,251 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --Primary-Color: #1a2b6d;
+  --Secondary-Color: #4a90e2;
+  --Accent-Color: #a8e855;
+  --Background-Color: #ffffff;
+  --Text-Color: #333333;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+/* start navbar */
+.navbar .links-nav {
+  color: var(--Text-Color);
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .navbar .links-nav {
+    color: var(--Background-Color);
+    font-weight: 500;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.navbar .logo {
+  margin: 0 20px;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.navbar button {
+  margin: 0 20px;
+}
+/* end navbar */
+
+/* start Hero */
+.hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  background-image: url('./imgs/2203137.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* end Hero */
+
+/* start coah pro */
+
+.coaches {
+  background: var(--Background-Color)
+}
+
+.coach-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.coach-card {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  flex-direction: column;
+  text-transform: capitalize;
+  margin: 20px;
+  flex-wrap: wrap;
+}
+
+.coach-card1 {
+  background-image: url("https://i.pinimg.com/originals/ff/10/7d/ff107dd98f5c0c69990a1ca57a850b9a.jpg");
+}
+
+.coach-card2 {
+  background-image: url("https://th.bing.com/th/id/R.db83667ee0c81d50a2bd57df7b7a5d54?rik=ZEjgcyv1YTDHXQ&pid=ImgRaw&r=0");
+}
+
+.coach-card3 {
+  background-image: url("https://th.bing.com/th/id/OIP.WWaQUJfmvRfaf7IpWZaCTwHaHp?rs=1&pid=ImgDetMain");
+}
+
+.more-coachs{
+  margin: 40px 0 0 0;
+}
+
+.fancy {
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 1.25em 2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  font-size: 13px;
+ }
+ 
+ .fancy::before {
+  content: " ";
+  width: 1.5625rem;
+  height: 2px;
+  background: black;
+  top: 50%;
+  left: 1.5em;
+  position: absolute;
+  transform: translateY(-50%);
+  transform-origin: center;
+  transition: background 0.3s linear, width 0.3s linear;
+ }
+ 
+ .fancy .text {
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  padding-left: 2em;
+  display: block;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+ }
+ 
+ .fancy .top-key {
+  height: 2px;
+  width: 1.5625rem;
+  top: -2px;
+  left: 0.625rem;
+  position: absolute;
+  background: #ffffff;
+  transition: width 0.5s ease-out, left 0.3s ease-out;
+ }
+ 
+ .fancy .bottom-key-1 {
+  height: 2px;
+  width: 1.5625rem;
+  right: 1.875rem;
+  bottom: -2px;
+  position: absolute;
+  background: #ffffff;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+ }
+ 
+ .fancy .bottom-key-2 {
+  height: 2px;
+  width: 0.625rem;
+  right: 0.625rem;
+  bottom: -2px;
+  position: absolute;
+  background: #ffffff;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+ }
+ 
+ .fancy:hover {
+  color: white;
+  background: black;
+ }
+ 
+ .fancy:hover::before {
+  width: 0.9375rem;
+  background: white;
+ }
+ 
+ .fancy:hover .text {
+  color: white;
+  padding-left: 1.5em;
+ }
+ 
+ .fancy:hover .top-key {
+  left: -2px;
+  width: 0px;
+ }
+ 
+ .fancy:hover .bottom-key-1,
+  .fancy:hover .bottom-key-2 {
+  right: 0;
+  width: 0;
+ }
+/* end coach pro */
+
+/* start services */
+.services{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  background-image: url('./imgs/swirls-render-cgi-3d-colorful-glowing-aesthetic-3840x2160-2183.jpg');
+  background-size: cover;
+}
+.services-cards{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 100px;
+}
+/* end services */
+
+
+/* start loader */
+.load{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Text-Color);
+}
+
+.loader {
+  width: 100px;
+  height: 45px;
+  position: relative;
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #000;
+  box-shadow: 0 0 0 50px;
+  clip-path: polygon(-50px -20px,10% -12px,20% 0,calc(50% - 15px) 0,calc(50% - 10px) -20px,calc(50% - 8px) -15px,calc(50% + 8px) -15px,calc(50% + 10px) -20px,calc(50% + 15px) 0,80% 0,90% -12px,calc(100% + 50px) -20px,100% 80%,calc(100% + 10px) calc(100% + 10px),60% 100%,50% calc(100% + 15px),40% 100%,-10px calc(100% + 10px),0 80%);
+}
+
+.loader:after {
+  animation: l9 1s infinite;
+  transform: perspective(300px) translateZ(0px)
+}
+
+@keyframes l9 {
+  to {
+    transform: perspective(300px) translateZ(100px);
+    opacity: 0 ;
   }
 }
+/* end loader */
